@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.section {
+  &-port {
+    $port-background-dark-color: rgba(39, 41, 47, 1);
+    $port-background-primary-color: rgba(3, 82, 117, 1);
+
+    .header {
+      font-size: 144px;
+      
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "phon1209.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass -w scss -o public/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Phon1209/Phon1209.github.io.git"
+  },
+  "keywords": [
+    "github.io",
+    "Phon1209"
+  ],
+  "author": "Phon1209",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Phon1209/Phon1209.github.io/issues"
+  },
+  "homepage": "https://github.com/Phon1209/Phon1209.github.io#readme",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
