@@ -62,37 +62,242 @@
           <div class="hints">
             <div class="hint">$$\text{substitute } u = x-2, du = dx $$</div>
             <div class="hint">$$= \int 7u^2du$$</div>
-            <div class="hint">$$=7 \int u^2du$$</div>
-            <div class="hint">$$=7 \frac{u^3}{3} + C$$</div>
+            <div class="hint">used rule #1: $$=7 \int u^2du$$</div>
+            <div class="hint">used rule #4: $$=7 \frac{u^3}{3} + C$$</div>
           </div>
         </div>
         <ul>
-          <li>It can be solved by more than 1 solutions</li>
-          <li>Some integration needs more than 1 rule to solve</li>
-          <li>Changing it to the simpler form will make it be solved easier</li>
+          <li>
+            It can be solved by
+            <span class="highlight">more than 1</span> solutions
+          </li>
+          <li>
+            Some integration needs
+            <span class="highlight"> more than 1</span> rule to solve
+          </li>
+          <li>
+            Changing it to the <span class="highlight">simpler form</span> will
+            make it be solved easier
+          </li>
         </ul>
 
         <h4>Ways to Change it to Simpler Form</h4>
         <ul>
-          <li>Expansion</li>
-          <li>Separate Numerator</li>
-          <li>Complete a Square</li>
-          <li>Addition or Subtraction</li>
-          <li>Conjugate</li>
-          <li>Trigonometric Identity</li>
+          <li>Expansion of Numerator (\((x+1)^2 = x^2 + 2x + 1\))</li>
+          <li>
+            Separate Numerator
+            <span class="inline-hint"
+              >(\(\frac{x+3}{x^2} = \frac{x}{x^2} + \frac{3}{x^2}\))</span
+            >
+          </li>
+          <li>
+            Complete a Square
+            <span class="inline-hint"
+              >(\(\frac{1}{\sqrt{2x-x^2}} = \frac{1}{\sqrt{1-(x-1)^2}}\))</span
+            >
+          </li>
+          <li>
+            Addition or Subtraction
+            <span class="inline-hint"
+              >(\(\frac{x}{x^2+2x+1} = \frac{x+1}{x^2+2x+1} - \frac{1}{x^2+2x+1}\))</span
+            >
+          </li>
+          <li>
+            Trigonometric Identity
+            <span class="inline-hint">(\(sin^2x + cos^2x = 1\))</span>
+          </li>
         </ul>
       </section>
       <section id="blog-2">
         <h2>Integration By Parts</h2>
         <p>$$\int udv = uv - \int vdu + C$$</p>
         <ul>
-          <li>It can be solved by more than 1 solutions</li>
-          <li>Some integration needs more than 1 rule to solve</li>
-          <li>Changing it to the simpler form will make it be solved easier</li>
+          <li>
+            Select \(u\) and \(dv\) based on
+            <span class="highlight">how hard </span> the integral will become
+            after choosing it (\(dv\) part must have \(dx\))
+          </li>
+          <li>
+            Guildline of choosing \(u\) (L-I-A-T-E) (With Exception):
+            <ul>
+              <li>L: Logarithmic function (\(lnx\))</li>
+              <li>I: Inverse Trigon function (\(arctanx\))</li>
+              <li>A: Algebriac function (\(x^n\))</li>
+              <li>T: Trigonometric function (\(sinx\))</li>
+              <li>E: Exponential function (\(e^x\))</li>
+            </ul>
+          </li>
+          <li>
+            if \(\int vdu\) part is still
+            <span class="highlight">not trivial</span> enough to solve with
+            basic, you <span class="highlight">must do</span> by part again with
+            that part integration with the same \(u &nbsp; \text{and} &nbsp;
+            dv\)
+          </li>
+          <li>
+            if \(\int vdu\) part is the same with question
+            <span class="highlight">regardless</span> of the coefficient, add/
+            subtract both side to eliminate the one on right side
+          </li>
         </ul>
+        <div class="sample">
+          <p>$$\int x^2e^(\frac{x}{2})dx$$</p>
+          <div class="hints">
+            <div class="hint">Select u and dv: $$u = x^2, dv = e^(\frac{x}{2}) dx$$ (Select Algebra(A) as u first)</div>
+            <div class="hint">$$du = 2x, v = 2e^(\frac{x}{2})$$</div>
+            <div class="hint">$$\int x^2e^(\frac{x}{2})dx = uv - \int vdu$$</div>
+            <div class="hint">$$\int x^2e^(\frac{x}{2})dx = x^2*2e^(\frac{x}{2}) - \int 4xe^(\frac{x}{2})dx$$</div>
+            <div class="hint">Select u and dv: $$u = 2x, dv = 2e^(\frac{x}{2}) dx$$ (Select Algebra(A) as u first)</div>
+            <div class="hint">$$du = 2, v = 4e^(\frac{x}{2})$$</div>
+            <div class="hint">$$\int 4xe^(\frac{x}{2})dx = uv - \int vdu$$</div>
+            <div class="hint">$$\int 4xe^(\frac{x}{2})dx = 8e^(\frac{x}{2}) - \int 8e^(\frac{x}{2})dx$$</div>
+            <div class="hint">$$\int 4xe^(\frac{x}{2})dx = 8e^(\frac{x}{2}) - 16e^(\frac{x}{2}) + C$$</div>
+            <div class="hint">$$\int x^2e^(\frac{x}{2})dx = x^2*2e^(\frac{x}{2}) - 8e^(\frac{x}{2}) + 16e^(\frac{x}{2}) + C$$</div>
+          </div>
+        </div>
+        <div class="sample">
+          <p>
+            $$\int x^5\sqrt[2]{x^3+1}$$
+          </p>
+          <div class="hints">
+            <div class="hint">Select u and dv: $$u = x^3, dv = x^2\sqrt[2]{x^3+1} dx$$ (Exception)</div>
+            <div class="hint">$$du = 3x^2dx, v = \frac{2}{9}*(x^3+1)^(\frac{3}{2})$$</div>
+            <div class="hint">$$\int x^5\sqrt[2]{x^3+1} = \frac{2}{9}*x^3*(x^3+1)^(\frac{3}{2}) - \frac{2}{3}\int (x^2)*(x^3+1)^(\frac{3}{2})dx$$</div>
+            <div class="hint">$$\int x^5\sqrt[2]{x^3+1} = \frac{2}{9}*x^3*(x^3+1)^(\frac{3}{2}) - \frac{4}{45} *(x^3+1)^(\frac{5}{2})$$</div>
+
+          </div>
+        </div>
       </section>
-      <section id="blog-3"></section>
-      <section id="blog-4"></section>
+      <section id="blog-3">
+        <h2>Partial Fraction</h2>
+        <ul>
+          <li>
+            It's a process to make the integral become easier to solve by
+            separate complicated fraction into
+            <span class="highlight">smaller simpler</span> part
+          </li>
+        </ul>
+        <div class="sample">
+          $$\frac{3x+2}{x^2+x}$$
+          <div class="hints">
+            <div class="hint">$$= \frac{3x+2}{x(x+1)}$$</div>
+            <div class="hint">$$= \frac{A}{x} + \frac{B}{x+1}$$</div>
+            <div class="hint">
+              multiply by \(x(x+1)\): $$3x+2 = A(x+1) + Bx$$
+            </div>
+            <div class="hint">
+              Rearrange (Comparing coefficient): $$3x+2 = (A+B)x + A$$
+            </div>
+            <div class="hint">$$A+B = 3, A=2$$</div>
+            <div class="hint">$$A = 2, B = 1$$</div>
+            <div class="hint">
+              Put A and B back: $$= \frac{2}{x} + \frac{1}{x+1}$$
+            </div>
+          </div>
+        </div>
+        <ul>
+          <li>
+            if the <span class="highlight">denominator has \(A^n\)</span> while
+            \(A\) is polynomial and \(n\) is whole number, we
+            <span class="highlight">must have \(A^i\)</span> as a new fraction;
+            \(i\) is 1 to n
+          </li>
+          <p class="inline-hint">
+            $$\frac{Z}{(x+1)(x+3)^3} = \frac{A}{(x+3)} +\frac{B}{(x+3)^2} +
+            \frac{C}{(x+3)^3} + \frac{D}{x+1}$$
+          </p>
+          <li>
+            if degree of Numerator is <span class="highlight">more</span> than
+            degree of denominator,
+            <span class="highlight">long division</span> is
+            <span class="highlight">required</span>
+          </li>
+          <li>
+            To find the numerator of the partial fraction, there's two options
+            <ul>
+              <li>Substitute x</li>
+              <li>Comparing coefficient</li>
+            </ul>
+          </li>
+          <li>Followed by Basic rule</li>
+        </ul>
+        <div class="sample">
+          <p>$$\frac{4x^2-22x+7}{(2x+3)(x-2)^2}$$</p>
+          <div class="hints">
+            <div class="hint">$$\frac{4x^2-22x+7}{(2x+3)(x-2)^2} = \frac{A}{2x+3} + \frac{B}{x-2} + \frac{C}{(x-2)^2}$$</div>
+            <div class="hint">multiply both sides with the LCD\((2x+3)(x-2)^2\):$$4x^2-22x+7 = A(x-2)^2 + B(x-2)(2x+3) + C(2x+3)$$</div>
+            <div class="hint">substitute x = 2: $$-21 = 7C$$</div>
+            <div class="hint">$$ C = -3 $$</div>
+            <div class="hint">substitute x = \(-3/2\): $$49 = A(-\frac{7}{2})^2$$</div>
+            <div class="hint">$$ A = 4 $$</div>
+            <div class="hint">substitute x = \(0, A, \text{and} C\): $$7 = 7 - 6B$$</div>
+            <div class="hint">$$ B = 0 $$</div>
+            <div class="hint">$$\frac{4x^2-22x+7}{(2x+3)(x-2)^2} = \frac{4}{2x+3} + \frac{-3}{(x-2)^2}$$</div>
+          </div>
+        </div>
+      </section>
+      <section id="blog-4">
+        <h2>Indeterminate Forms and L'hopital's Rule</h2>
+
+        <ul>
+          <li>
+            Indeterminate Forms is the expression
+            <span class="highlight">obtained by applying the limit</span>, but
+            <span class="highlight">doesn't provide sufficient</span>
+            information to determine the real value
+          </li>
+          <li class="inline-hint">
+            Indeterminate form comes in two forms: \(\frac{0}{0}\) and
+            \(\frac{\infty}{\infty}\)
+          </li>
+          <li>
+            to tackle these Indeterminate forms, we use
+            <span class="highlight">L'hopital's rule</span>
+          </li>
+          <p class="inline-hint">
+            $$\lim_{x\to c} \frac{f(x)}{g(x)} = \lim_{x\to c}
+            \frac{f'(x)}{g'(x)}$$
+          </p>
+          <li>
+            but <span class="highlight">it can't be used</span> if \(g'(x) = 0\)
+            for some point in the interval
+          </li>
+          <li><span class="highlight">Repeat the process</span> until the limit is not Indeterminate anymore or can directly find the answer</li>
+        </ul>
+        <div class="sample">
+          <p>$$\lim_{t \to \infty} \frac{5t^4-4t^2-1}{10-t-9t^3}$$</p>
+          <div class="hints">
+            <div class="hint">
+              Check if it's Indeterminate: $$\lim_{t \to \infty}
+              \frac{5t^4-4t^2-1}{10-t-9t^3} = \frac{+\infty}{-\infty}$$
+            </div>
+            <div class="hint">
+              Apply L'hopital's: $$\lim_{t \to \infty}
+              \frac{5t^4-4t^2-1}{10-t-9t^3} = \lim_{t \to \infty}
+              \frac{20t^3-8t}{-1-27t^2}$$
+            <div class="hint">
+              Check if it's Indeterminate (again): $$\lim_{t \to \infty}
+              \frac{20t^3-8t}{-1-27t^2} = \frac{+\infty}{-\infty}$$
+            </div>
+            <div class="hint">
+              Apply L'hopital's: $$\lim_{t \to \infty}
+              \frac{20t^3-8t}{-1-27t^2} = \lim_{t \to \infty}
+              \frac{60t^2-8}{-54t}$$
+            </div>
+            <div class="hint">
+              Check if it's Indeterminate (again): $$\lim_{t \to \infty}
+              \frac{60t^2-8}{-54t} = \frac{+\infty}{-\infty}$$
+            </div>
+            <div class="hint">
+              Apply L'hopital's: $$\lim_{t \to \infty}
+              \frac{60t^2-8}{-54t} = \lim_{t \to \infty}
+              \frac{120t}{-54}$$
+            </div>
+            <div class="hint">Apply t:$$ \lim_{t \to \infty}
+              \frac{120t}{-54} = \infty$$</div>
+          </div>
+        </div>
+      </section>
       <section id="blog-5"></section>
     </div>
   </body>

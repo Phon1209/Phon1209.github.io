@@ -17,7 +17,11 @@ body {
   flex-wrap: wrap
 }
 
-.hint * , .sample{
+.highlight {
+  color: tomato;
+}
+
+.hint * , .sample, .sample *,.inline-hint *{
   font-size: 16px;
   /* font-family: initial; */
 }
@@ -153,8 +157,13 @@ section.current {
 }
 
 #blogs > section h2 {
+  margin: 2rem 0;
   font-size: 1.4rem;
 }
 #blogs > section h4 {
   margin: 2rem 1rem;
+}
+
+#blogs ul li {
+  padding: 0.3rem;
 }
