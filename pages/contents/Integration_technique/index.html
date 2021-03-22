@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Integration Techniques Summary</title>
+  </head>
+  <body>
+    <header class="container">
+      <div>
+        <h1>Integration Techniques</h1>
+        <p>made by Patiphon Loetsuthakun (Phon1209)</p>
+      </div>
+      <section id="menu" class="flex current">
+        <h3>Menu</h3>
+        <ul class="flex">
+          <li id="btn-1" value="blog-1" class="btn complete">
+            Basic Integration Rules
+            <div class="hint">$$\int udu = u + C$$</div>
+          </li>
+          <li id="btn-2" class="btn in-progress">
+            Integration by Parts
+            <div class="hint">$$\int udv = uv - \int vdu + C$$</div>
+          </li>
+          <li id="btn-3" class="btn not-start">
+            Partial Fractions
+            <div class="hint">
+              $$ \dfrac{2}{x^2-1} = \dfrac{A}{x-1} + \dfrac{B}{x+1}$$
+            </div>
+          </li>
+          <li id="btn-4" class="btn not-start">
+            Indeterminate Forms and L'hopital's Rule
+            <div class="hint">
+              $$\lim_{x\to c} \frac{f(x)}{g(x)} = \lim_{x\to c}
+              \frac{f'(x)}{g'(x)}$$
+            </div>
+          </li>
+          <li id="btn-5" class="btn not-start">
+            Improper Integral
+            <div class="hint">
+              $$\int_{a}^{\infty} f(x)dx = \lim_{t \to \infty}\int_{a}^{t}
+              f(x)dx $$
+            </div>
+          </li>
+        </ul>
+      </section>
+    </header>
+    <div id="blogs">
+      <section id="blog-1">
+        <h2>Basic Integration</h2>
+        <img src="img/phpIarHol.png" alt="Basic Integration" srcset="" />
+        <div class="sample">
+          <p>$$\int 7(x-2)^2 dx$$</p>
+          <div class="hints">
+            <div class="hint">$$\text{substitute } u = x-2, du = dx $$</div>
+            <div class="hint">$$= \int 7u^2du$$</div>
+            <div class="hint">$$=7 \int u^2du$$</div>
+            <div class="hint">$$=7 \frac{u^3}{3} + C$$</div>
+          </div>
+        </div>
+        <ul>
+          <li>It can be solved by more than 1 solutions</li>
+          <li>Some integration needs more than 1 rule to solve</li>
+          <li>Changing it to the simpler form will make it be solved easier</li>
+        </ul>
+
+        <h4>Ways to Change it to Simpler Form</h4>
+        <ul>
+          <li>Expansion</li>
+          <li>Separate Numerator</li>
+          <li>Complete a Square</li>
+          <li>Addition or Subtraction</li>
+          <li>Conjugate</li>
+          <li>Trigonometric Identity</li>
+        </ul>
+      </section>
+      <section id="blog-2">
+        <h2>Integration By Parts</h2>
+        <p>$$\int udv = uv - \int vdu + C$$</p>
+        <ul>
+          <li>It can be solved by more than 1 solutions</li>
+          <li>Some integration needs more than 1 rule to solve</li>
+          <li>Changing it to the simpler form will make it be solved easier</li>
+        </ul>
+      </section>
+      <section id="blog-3"></section>
+      <section id="blog-4"></section>
+      <section id="blog-5"></section>
+    </div>
+  </body>
+  <script>
+    function resizeBlog() {
+      const blogs = document.querySelector("#blogs");
+      const menus = document.querySelector("#menu");
+      blogs.style.width = window.screen.width - menus.offsetLeft + "px";
+      // console.log(blogs.style.width);
+    }
+
+    function showHint(e) {
+      // if (e.target.classList.contains("sample")) console.log(e.target);
+      var target = e.target;
+      console.log(target);
+      while (!target.classList.contains("sample")) {
+        target = target.parentNode;
+      }
+      console.log(target);
+      var percent = 50;
+      var toggled = false;
+      target.querySelectorAll(".hint").forEach((hint) => {
+        if (!toggled && !hint.classList.contains("showed")) {
+          toggled = true;
+          hint.classList.add("showed");
+          hint.style.top = percent + "%";
+        }
+        percent += 50;
+      });
+      if (!toggled) {
+        target.querySelectorAll(".hint").forEach((hint) => {
+          hint.classList.remove("showed");
+        });
+      }
+    }
+
+    function selectPanel(id) {
+      const openedPanel = document.querySelector("section.current");
+      if (openedPanel) openedPanel.classList.remove("current");
+
+      document.querySelector(`#${id}`).classList.add("current");
+    }
+
+    function changePanel(e) {
+      selectPanel(e.target.value);
+    }
+    // window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("resize", resizeBlog);
+    window.addEventListener("DOMContentLoaded", resizeBlog);
+    document.querySelectorAll(".sample").forEach((sample) => {
+      sample.addEventListener("click", showHint);
+    });
+    document.querySelectorAll(".btn", (btn) => {
+      console.log(btn);
+      btn.addEventListener("click", changePanel);
+    });
+    // });
+  </script>
+</html>
