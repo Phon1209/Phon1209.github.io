@@ -11,6 +11,7 @@
 
 body {
   background: #ebe8e8;
+  overflow-x: hidden;
 }
 .flex {
   display: flex;
@@ -41,6 +42,7 @@ body {
 
 .sample:after {
   content: "Click to show solution";
+  color: rgb(10, 141, 141);
 }
 
 .sample .hints {
@@ -93,6 +95,8 @@ header > div {
   padding-right: 1rem;
   border-right: #ccc 0.2px solid;
 }
+
+
 header h1 {
   font-size: 3rem;
 }
@@ -106,7 +110,7 @@ header p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-wrap: nowraps;
+  flex-wrap: nowrap;
 }
 
 #menu h3 {
@@ -129,6 +133,9 @@ header p {
 }
 
 #blogs {
+  position: absolute;
+  top: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -136,12 +143,12 @@ header p {
   width: 800px;
 }
 
-section {
-  /* transform: translateX(150%); */
+section, #menu {
+  transform: translateX(150%);
 }
 
 section.current {
-  transform: translateX(0);
+  transform: translateX(0)!important;
 }
 
 #blogs > section {
@@ -150,6 +157,15 @@ section.current {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+}
+
+#blogs > section > .back-btn {
+  position: absolute;
+  padding: 0.3rem 1rem;
+  border-radius: 5px;
+  top: 2rem;
+  left: 2rem;
 }
 
 #blogs > section > ul, #blogs > section > div:not(.sample) {

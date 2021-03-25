@@ -26,24 +26,24 @@
             Basic Integration Rules
             <div class="hint">$$\int udu = u + C$$</div>
           </li>
-          <li id="btn-2" class="btn in-progress">
+          <li id="btn-2" value="blog-2" class="btn in-progress">
             Integration by Parts
             <div class="hint">$$\int udv = uv - \int vdu + C$$</div>
           </li>
-          <li id="btn-3" class="btn not-start">
+          <li id="btn-3" value="blog-3" class="btn not-start">
             Partial Fractions
             <div class="hint">
               $$ \dfrac{2}{x^2-1} = \dfrac{A}{x-1} + \dfrac{B}{x+1}$$
             </div>
           </li>
-          <li id="btn-4" class="btn not-start">
+          <li id="btn-4" value="blog-4" class="btn not-start">
             Indeterminate Forms and L'hopital's Rule
             <div class="hint">
               $$\lim_{x\to c} \frac{f(x)}{g(x)} = \lim_{x\to c}
               \frac{f'(x)}{g'(x)}$$
             </div>
           </li>
-          <li id="btn-5" class="btn not-start">
+          <li id="btn-5" value="blog-5" class="btn not-start">
             Improper Integral
             <div class="hint">
               $$\int_{a}^{\infty} f(x)dx = \lim_{t \to \infty}\int_{a}^{t}
@@ -54,7 +54,8 @@
       </section>
     </header>
     <div id="blogs">
-      <section id="blog-1">
+      <section id="blog-1" class="">
+        <div class="back-btn btn" value="menu">Back</div>
         <h2>Basic Integration</h2>
         <img src="img/phpIarHol.png" alt="Basic Integration" srcset="" />
         <div class="sample">
@@ -109,6 +110,7 @@
         </ul>
       </section>
       <section id="blog-2">
+        <div class="back-btn btn" value="menu">Back</div>
         <h2>Integration By Parts</h2>
         <p>$$\int udv = uv - \int vdu + C$$</p>
         <ul>
@@ -169,6 +171,7 @@
         </div>
       </section>
       <section id="blog-3">
+        <div class="back-btn btn" value="menu">Back</div>
         <h2>Partial Fraction</h2>
         <ul>
           <li>
@@ -237,6 +240,7 @@
         </div>
       </section>
       <section id="blog-4">
+        <div class="back-btn btn" value="menu">Back</div>
         <h2>Indeterminate Forms and L'hopital's Rule</h2>
 
         <ul>
@@ -298,7 +302,10 @@
           </div>
         </div>
       </section>
-      <section id="blog-5"></section>
+      <section id="blog-5">
+        <div class="back-btn btn" value="menu">Back</div>
+
+      </section>
     </div>
   </body>
   <script>
@@ -311,14 +318,14 @@
 
     function showHint(e) {
       // if (e.target.classList.contains("sample")) console.log(e.target);
-      var target = e.target;
-      console.log(target);
+      let target = e.target;
+      // console.log(target);
       while (!target.classList.contains("sample")) {
         target = target.parentNode;
       }
-      console.log(target);
-      var percent = 50;
-      var toggled = false;
+      // console.log(target);
+      let percent = 50;
+      let toggled = false;
       target.querySelectorAll(".hint").forEach((hint) => {
         if (!toggled && !hint.classList.contains("showed")) {
           toggled = true;
@@ -342,18 +349,26 @@
     }
 
     function changePanel(e) {
-      selectPanel(e.target.value);
+      console.log(e.target);
+      let target = e.target;
+      while(!target.getAttribute("value")) {
+        target  = target.parentNode;
+      }
+      // console.log(e.target.getAttribute("value"));
+      selectPanel(target.getAttribute("value"));
     }
-    // window.addEventListener("DOMContentLoaded", () => {
+
     window.addEventListener("resize", resizeBlog);
-    window.addEventListener("DOMContentLoaded", resizeBlog);
-    document.querySelectorAll(".sample").forEach((sample) => {
-      sample.addEventListener("click", showHint);
+    window.addEventListener("DOMContentLoaded", ()=> {
+      resizeBlog();
+      // console.log(1);
+      document.querySelectorAll(".sample").forEach((sample) => {
+        sample.addEventListener("click", showHint);
+      });
+      document.querySelectorAll(".btn").forEach(btn => {
+        // console.log(btn);
+        btn.addEventListener("click", changePanel);
+      });
     });
-    document.querySelectorAll(".btn", (btn) => {
-      console.log(btn);
-      btn.addEventListener("click", changePanel);
-    });
-    // });
   </script>
 </html>
