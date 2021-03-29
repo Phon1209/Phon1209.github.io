@@ -145,10 +145,13 @@ header p {
 
 section, #menu {
   transform: translateX(150%);
+  opacity: 0;
 }
 
 section.current {
   transform: translateX(0)!important;
+  opacity: 1!important;
+
 }
 
 #blogs > section {

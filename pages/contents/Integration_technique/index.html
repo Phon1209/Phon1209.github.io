@@ -304,6 +304,48 @@
       </section>
       <section id="blog-5">
         <div class="back-btn btn" value="menu">Back</div>
+        <h2>Improper Integral</h2>
+        <p>A improper integral is an integral that has range of infinite length or function \(f\) has discontinuities</p>
+        
+
+        <h4>In case of infinite range</h4>
+        <ul>
+          <li>We will use <span class="highlight">limit</span> to <span class="highlight">substitute</span> the value of infinity</li>
+          <li>It can occur on <span class="highlight">both or either</span> upper or lower limit</li>
+        </ul>
+        $$\int_{a}^{\infty} f(x)dx = \lim_{t \to \infty}\int_{a}^{t}
+              f(x)dx $$
+        $$\int_{-\infty}^{a} f(x)dx = \lim_{t \to -\infty}\int_{t}^{a}
+        f(x)dx $$
+        $$\int_{-\infty}^{\infty} f(x)dx = \lim_{(s,t) \to (-\infty,\infty)}\int_{s}^{t}
+        f(x)dx $$
+
+        <h4>In case of Discontinuities</h4>
+        <ul>
+          <li>Assume that function \(f\) has a discontinuities on <span class="hightlight"> point \(c\)</span> that in range \(a\) to \(b\)</li>
+          <li>if \(c\) is in between \(a\) and \(b\), then <span class="highlight">seperate</span> the integral into 2 parts
+            <div class="hint">
+              function \(1/x^2\) has a discontinuities on \(x = 0\) :
+              $$\int_{-1}^{1} dx/x^2 = \int_{-1}^{0} dx/x^2 + \int_{0}^{1} dx/x^2$$</div>
+          </li>
+          <li>if \(c\) is \(a\) or \(b\), then <span class="highlight">substitute limit</span> to the side that has discontinuities</li>
+          <li>if it is upper limit (b), the limit will approach to \(b-\)
+            <div class="hint">
+              $$\int_{-1}^{0} dx/x^2 = \lim_{t \to 0-}\int_{-1}^{t} dx/x^2$$
+            </div>
+          </li>
+          <li>if it is lower limit (a), the limit will approach to \(a+\)
+            <div class="hint">
+              $$\int_{0}^{1} dx/x^2 = \lim_{t \to 0+}\int_{t}^{1} dx/x^2$$
+            </div>
+          </li>
+        </ul>
+        <h4>Convergent and Divergent</h4>
+        <img src="./img/HarmonicSeriesComparisonGraph.png" alt="Convergent and Divergent">
+        <ul>
+          <li>if the value of the limit exist, that integral is Convergent and can be solved with normal integration step</li>
+          <li>but if it doesn't exist, the integral is Divergent</li>
+        </ul>
 
       </section>
     </div>
